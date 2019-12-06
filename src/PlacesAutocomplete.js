@@ -155,7 +155,7 @@ class PlacesAutocomplete extends React.Component {
     if (activeSuggestion === undefined) {
       this.handleSelect({ address: this.props.value });
     } else {
-      this.handleSelect({ suggestion: activeSuggestion });
+      this.handleSelect(activeSuggestion);
     }
   };
 
@@ -345,7 +345,7 @@ class PlacesAutocomplete extends React.Component {
     if (event && event.preventDefault) {
       event.preventDefault();
     }
-    this.handleSelect({ suggestion });
+    this.handleSelect(suggestion);
     setTimeout(() => {
       this.mousedownOnSuggestion = false;
     });
