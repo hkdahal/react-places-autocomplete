@@ -6,6 +6,8 @@
 
 A React component to build a customized UI for Google Maps Places Autocomplete
 
+A Fork of `react-place-autocomplete`
+
 ### Demo
 
 Live demo: [hibiken.github.io/react-places-autocomplete/](https://hibiken.github.io/react-places-autocomplete/)

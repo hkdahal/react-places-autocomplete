@@ -113,8 +113,7 @@ class PlacesAutocomplete extends React.Component {
   };
 
   clearSuggestions = () => {
-    // Let's not clear any suggestion for now
-    // this.setState({ suggestions: [] });
+    this.setState({ suggestions: [] });
   };
 
   clearActive = () => {
@@ -127,7 +126,6 @@ class PlacesAutocomplete extends React.Component {
   };
 
   handleSelect = (selectedData) => {
-    this.clearSuggestions();
     if (this.props.onSelect) {
       this.props.onSelect(selectedData);
     } else {
@@ -207,7 +205,6 @@ class PlacesAutocomplete extends React.Component {
         this.handleUpKey();
         break;
       case 'Escape':
-        this.clearSuggestions();
         break;
     }
     /* eslint-enable indent */
@@ -240,7 +237,8 @@ class PlacesAutocomplete extends React.Component {
 
   handleInputOnBlur = () => {
     if (!this.mousedownOnSuggestion) {
-      this.clearSuggestions();
+      // ignore clearing suggestions for now
+      // this.clearSuggestions();
     }
   };
 

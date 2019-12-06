@@ -81,23 +81,13 @@ describe('keyboard events handlers', () => {
     expect(suggestions[suggestions.length - 1].active).toEqual(true);
   });
 
-  test('pressing ESC key will clear suggestions', () => {
-    const wrapper = mountComponent();
-    simulateSearch(wrapper);
-
-    const input = wrapper.find('input');
-    input.simulate('keydown', { key: 'Escape' });
-    const { suggestions } = wrapper.state();
-    expect(suggestions.length).toEqual(0);
-  });
-
-  test('pressing Enter key will clear suggestions', () => {
+  test('pressing Enter key will not clear suggestions', () => {
     const wrapper = mountComponent();
     simulateSearch(wrapper);
 
     const input = wrapper.find('input');
     input.simulate('keydown', { key: 'Enter' });
     const { suggestions } = wrapper.state();
-    expect(suggestions.length).toEqual(0);
+    expect(suggestions.length).not.toEqual(0);
   });
 });
